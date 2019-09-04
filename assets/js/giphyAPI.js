@@ -28,42 +28,7 @@ $(document).ready(async function(){
         var apiUrl = "http://api.giphy.com/v1/gifs/search?q=";
         var rating = "&rating=r";
         var defaultSearch = " superhero";
-        $.ajax({       
-            url: apiUrl + term + defaultSearch + rating + key,
-            type: "GET"
-        })
-    
-        .then(function(response) {
-    
-            for (let i = 0; i < response.data.length; i++) {
-                var imageAlt = response.data[i].title;
-                var imageUrl = response.data[i].images.downsized.url;
-                var rated = response.data[i].rating;
-                var imageElement = $("<img>");
-                var ratingElement = $("<div class=\"rating\">");
-            // Attaches API provided img to created img element
-                var fourthWidth = $("<div class=\"col-md-4\">");
-                ratingElement.text(rated);
-                imageElement.attr("src", imageUrl);
-                imageElement.attr("alt", imageAlt);
-                imageElement.attr("class","img-responsive");
-            // Places latest catImage above #images element
-                $("#gifs").prepend(fourthWidth);
-                $(fourthWidth).append(imageElement);
-                $(fourthWidth).append(ratingElement);
-            }
-        });    
-    });
-    $(".button").click(function () {
-        
-        var term = $(this).attr("data-term");  
-        
-        var key = "&api_key=QngcthEf2wRQds5Zw0YnWw4hXvm259zV";
-        var apiUrl = "http://api.giphy.com/v1/gifs/search?q=";
-        var rating = "&rating=r";
-        var defaultSearch = " superhero";
         var title = "&title";
-
         $.ajax({       
             url: apiUrl + term + defaultSearch + rating + title + key,
             type: "GET"
@@ -82,7 +47,45 @@ $(document).ready(async function(){
                 var fourthWidth = $("<div class=\"col-md-4\">");
                 ratingElement.text(rated);
                 titleElement.text(imageAlt);
-                console.log(imageAlt);
+                imageElement.attr("src", imageUrl);
+                imageElement.attr("alt", imageAlt);
+                imageElement.attr("class","img-responsive");
+            // Places latest catImage above #images element
+                $("#gifs").prepend(fourthWidth);
+                $(fourthWidth).append(imageElement);
+                $(fourthWidth).append(ratingElement);
+                $(fourthWidth).append(titleElement);
+            }
+        });    
+    });
+    $(".button").click(function () {
+        
+        var term = $(this).attr("data-term");  
+        var key = "&api_key=QngcthEf2wRQds5Zw0YnWw4hXvm259zV";
+        var apiUrl = "http://api.giphy.com/v1/gifs/search?q=";
+        var rating = "&rating=r";
+        var defaultSearch = " superhero";
+        var title = "&title";
+
+        $.ajax({       
+            url: apiUrl + term + defaultSearch + rating + title + key,
+            type: "GET"
+        })
+    
+        .then(function(response) {
+    
+                for (let i = 0; i < response.data.length; i++) {
+                var imageAlt = response.data[i].title;
+                var imageUrl = response.data[i].images.downsized.url;
+                var rated = response.data[i].rating;
+                var imageElement = $("<img>");
+                var ratingElement = $("<div class=\"rating\">");
+                var titleElement = $("<p class=\'title\'>");
+            // Attaches API provided img to created img element
+                var fourthWidth = $("<div class=\"col-md-4\">");
+                ratingElement.text(rated);
+                titleElement.text(imageAlt);
+                
                 imageElement.attr("src", imageUrl);
                 imageElement.attr("alt", imageAlt);
                 imageElement.attr("class","img-responsive");
