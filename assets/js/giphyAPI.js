@@ -18,17 +18,19 @@ RESULT LIMIT: &limit=20
 
 $(document).ready(async function(){
 
+    var key = "&api_key=QngcthEf2wRQds5Zw0YnWw4hXvm259zV";
+    var apiUrl = "https://api.giphy.com/v1/gifs/search?q=";
+    var rating = "&rating=r";
+    var defaultSearch = " superhero";
+    var title = "&title";
+
     $("#searchSubmit").click(function () {
         searchTerm = $('#searchGiphy').val();
         $("#searchSubmit").attr("data-term",searchTerm);  
         var term = $(this).attr("data-term");  
         $("#buttons").append('<button id=\"'+searchTerm+'\"class=\"button\" data-term=\"' + searchTerm + '\">'); 
         $("#"+ searchTerm).text(searchTerm);
-        var key = "&api_key=QngcthEf2wRQds5Zw0YnWw4hXvm259zV";
-        var apiUrl = "https://api.giphy.com/v1/gifs/search?q=";
-        var rating = "&rating=r";
-        var defaultSearch = " superhero";
-        var title = "&title";
+        
         $.ajax({       
             url: apiUrl + term + defaultSearch + rating + title + key,
             type: "GET"
