@@ -62,7 +62,7 @@ $(document).ready(async function(){
         
         var term = $(this).attr("data-term");  
         var key = "&api_key=QngcthEf2wRQds5Zw0YnWw4hXvm259zV";
-        var apiUrl = "http://api.giphy.com/v1/gifs/search?q=";
+        var apiUrl = "https://api.giphy.com/v1/gifs/search?q=";
         var rating = "&rating=r";
         var defaultSearch = " superhero";
         var title = "&title";
