@@ -4,29 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="assets/css/giphyAPI.css" />
-    <title>GIPHY - THE API (Stephen L. Fox - Homework 6)</title>
+    <title>SUPERHERO GIPHY SEARCH! (Stephen L. Fox - Homework 6)</title>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1>GIPHY &ndash; THE API</h1>
+                <h1> &bull; SUPERHERO GIPHY SEARCH &bull; </h1>
             </div>
         </div>
         <div class="container-fluid">
             <div class="col-md-12">
-                <form id="query-form">
+                
                     <label id="searchLabel" for="searchGiphy">Discover the world of GIPHY Superheroes ... </label>
-                    <input id="searchGiphy" class="search-giphy" type="text" required>
-                    <button type="button" id="searchSubmit" class="button" value="Get Wierd">GET WIERD</button>
-                </form>
+                    <input id="searchGiphy" class="search-giphy" type="text" placeholder="Type your favorite superhero's name, and then click 'Get Wierd!'" required>
+                    <button type="button" id="searchSubmit" value="Get Wierd">GET WIERD</button>
+              
             </div>
         </div>
-        <section id="gifs" class="row">
-
-        </section>
         <section id="buttons" class="row">
+            <h2>Stephen's Favorites: </h2>
+                <button type="button" class="button" data-term="Wolverine">Wolverine</button>
+                <button type="button" class="button" data-term="Nightwing">Nightwing</button>
+                <button type="button" class="button" data-term="Spider-Man">Spider-Man</button>
+                <button type="button" class="button" data-term="Superman">Superman</button>
+        </section>
+        <section id="gifs" class="row">
 
         </section>
     </div>
