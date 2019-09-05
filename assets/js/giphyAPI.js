@@ -25,6 +25,7 @@ $(document).ready(async function(){
     var limit = "&limit=3";
     $("#searchSubmit").click(function () {
         searchTerm = $('#searchGiphy').val();
+        searchTerm = searchTerm.replace(" ","_");
         $("#searchSubmit").attr("data-term",searchTerm);  
         var term = $(this).attr("data-term");  
         $("#buttons").append('<button id=\"'+searchTerm+'\"class=\"button\" data-term=\"' + searchTerm + '\">'); 
