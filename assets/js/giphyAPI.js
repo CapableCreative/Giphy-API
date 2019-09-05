@@ -29,7 +29,7 @@ $(document).ready(async function(){
         $("#searchSubmit").attr("data-term",searchTerm);  
         var term = $(this).attr("data-term");  
         $("#buttons").append('<button id=\"'+searchTerm+'\"class=\"button\" data-term=\"' + searchTerm + '\">'); 
-        $("#"+ searchTerm).text(searchTerm);
+        $("#"+ searchTerm).html(searchTerm);
         ajaxCall(term);  
         $("#"+ searchTerm).click(function () {
             var term = $(this).attr("data-term");  
